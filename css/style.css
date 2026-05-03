@@ -1,0 +1,127 @@
+/* --- CƠ BẢN --- */
+/* Thiết lập màu sắc đảm bảo độ tương phản cao cho WAVE */
+body {
+    font-family: Arial, sans-serif;
+    color: #000000; /* Chữ đen */
+    background-color: #ffffff; /* Nền trắng */
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #eeeeee; /* Nền xám nhạt */
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* YÊU CẦU 1: Comment out the existing styling for the li element */
+/*
+li {
+    list-style-type: square;
+    color: red;
+}
+*/
+
+/* Hỗ trợ hiển thị menu ngang cho đẹp (không bắt buộc nhưng nên có) */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline; /* Giúp menu nằm ngang cạnh ảnh logo */
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+/* YÊU CẦU: Style cho Skip Link (Để qua WAVE validator, ta ẩn nó cho đến khi dùng phím Tab) */
+.skip-link {
+    position: absolute;
+    top: -100px; /* Ẩn khỏi màn hình */
+    left: 0;
+    background-color: #000000; /* Nền đen */
+    color: #ffffff; /* Chữ trắng - tương phản 100% */
+    padding: 10px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0; /* Hiện ra khi được tab tới */
+}
+
+
+/* --- CÁC QUY TẮC CSS THEO YÊU CẦU BÀI TẬP --- */
+
+/* YÊU CẦU 2: Change the nav element to use inline-block and have a width of about 80% */
+nav {
+    display: inline-block;
+    width: 80%;
+}
+
+/* YÊU CẦU 3: Use a descendent selector to style only the image in the nav to have a width of about 10% */
+nav img {
+    width: 10%;
+    height: auto; /* Giữ tỉ lệ ảnh */
+    vertical-align: middle; /* Căn giữa dọc với menu chữ */
+}
+
+/* YÊU CẦU 4 & 6: Style the grid class. Two column grid (~40%) and adjust properties */
+/* Đừng quên dấu chấm cho class selector */
+.grid {
+    display: grid;
+    /* YÊU CẦU 4: 2 cột khoảng 40% */
+    grid-template-columns: 40% 40%;
+    
+    /* YÊU CẦU 6: Điều chỉnh để giống ảnh mẫu */
+    justify-content: space-evenly; /* Phân bổ khoảng trống đều giữa và 2 bên */
+    align-items: center;        /* Căn giữa các item theo chiều dọc */
+    row-gap: 30px;              /* Khoảng cách giữa các hàng */
+    
+    margin-top: 20px;
+}
+
+/* YÊU CẦU 5: Use the descendent selector to style only the images in the grid class to have a width of 100%. */
+.grid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc; /* Thêm viền nhẹ cho đẹp */
+}
+
+.grid-item {
+    text-align: center;
+}
+
+/* YÊU CẦU 7: Style the flex class to use flex and adjust properties */
+.flex {
+    display: flex;
+    
+    /* YÊU CẦU 7: Điều chỉnh flex-wrap và justify-content */
+    flex-wrap: wrap;             /* Cho phép các item rớt hàng khi thiếu chỗ */
+    justify-content: space-around; /* Phân bổ khoảng trống xung quanh các item */
+    
+    margin-top: 20px;
+}
+
+.flex-item {
+    width: 250px; /* Chiều rộng cố định cho các item trong flex */
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    padding: 10px;
+}
+
+/* Đảm bảo ảnh trong flex-item không bị ảnh hưởng bởi quy tắc .grid img */
+.flex-item img {
+    max-width: 100%;
+    height: auto;
+}
